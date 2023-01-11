@@ -3,6 +3,7 @@ sudo apt update
 sudo apt full-upgrade -y
 sudo apt install ethtool -y
 sudo apt install nload && sudo apt install mc -y && sudo apt install docker.io -y && sudo sed -ie 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1'/g /etc/sysctl.conf && sudo sysctl --system && sudo apt install docker-compose -y
+sudo chmod 777 /var/run/docker.sock
 sudo iptables -F
 sudo iptables -A INPUT -p all -j ACCEPT
 sudo iptables -A FORWARD -p all -j ACCEPT
