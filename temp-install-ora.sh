@@ -1,5 +1,4 @@
 #!/bin/sh
-sudo apt update
 sudo sed -ie 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1'/g /etc/sysctl.conf && sudo sysctl --system
 sudo chmod 777 /var/run/docker.sock
 sudo iptables -F
