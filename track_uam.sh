@@ -3,7 +3,7 @@ echo $(date +"%Y-%m-%d %H:%M:%S")
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
-random_duration=$(( (RANDOM % 20) + 1 ))
+random_duration=$(( (RANDOM % 60) + 1 ))
 sleep $random_duration
 currentblock=$(curl -s https://utopian.is/api/explorer/blocks/get | grep -o '"block":[0-9]*' | awk -F: '{print $2}' | head -n 1)
 echo -e "${GREEN}Current Block: $currentblock${NC}"
