@@ -10,4 +10,5 @@ sudo iptables -t nat -I POSTROUTING -s 172.17.0.1 -j SNAT --to-source $(ip addr 
 sudo apt purge ntp -y
 sudo systemctl start systemd-timesyncd
 sudo systemctl status systemd-timesyncd >>null
+cat null
 echo "DONE"
