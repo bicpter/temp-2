@@ -21,5 +21,5 @@ echo "List of threads: $threads"
 for val in $threads; do lastblock=$(docker logs $val --tail 200 | awk '/Processed block/ {block=$NF} END {print block}'); echo "Last block of $val: $lastblock" ; if [ -z $lastblock ]; then name=$(sudo docker restart $val); echo -e "${RED}Restart: $val - Not activated${NC}"; elif [ "$lastblock" -lt "$block" ]; then sudo docker restart $val >null; echo -e "${RED}Restart: $val - Missing $(($currentblock - $lastblock)) blocks${NC}"; else echo -e "${GREEN}Passed${NC}"; fi; done
 sudo apt purge ntp -y
 sudo systemctl start systemd-timesyncd
-sudo systemctl status systemd-timesyncd >>null
+sudo systemctl status systemd-timesyncd >null
 cat null
