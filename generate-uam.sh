@@ -24,4 +24,4 @@ wget https://github.com/bicpter/uam-docker/raw/master/uam-swarm/$file_name
 wget https://github.com/bicpter/uam-docker/raw/master/uam-swarm/entrypoint.sh
 
 # Chạy Docker Compose với biến môi trường PBKEY được cung cấp
-sudo PBKEY=$1 docker-compose -f $file_name up -d
+sudo PBKEY=0ACD1805F5CF208F2F22AC0F716028B5694BD71D2594CB34C31B1487C7A12921 docker-compose -f $file_name up -d
