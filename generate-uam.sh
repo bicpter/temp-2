@@ -16,7 +16,7 @@ sudo docker rm -f $(docker ps -aq --filter ancestor=debian:bullseye-slim) && sud
 file_name=$number-docker-compose.yml
 
 # Xóa các tệp cụ thể
-rm entrypoint.sh
+rm entrypoint*
 rm $file_name
 
 # Tải phiên bản mới của các tệp
