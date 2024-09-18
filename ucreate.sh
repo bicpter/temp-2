@@ -9,5 +9,5 @@ fi
 # Lặp lại số lần được chỉ định trong tham số
 for ((i=1; i<=$1; i++)); do
     echo "Chạy Utopia lần thứ $i"
-    firejail /opt/utopia/messenger/utopia &
+    firejail --private=$TEMP_DIR /opt/utopia/messenger/utopia &
 done
